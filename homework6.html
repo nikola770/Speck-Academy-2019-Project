@@ -1,0 +1,94 @@
+<html>
+<body>
+
+<script>
+var halls = [{
+ID: Math.floor(Math.random() * 10000),
+name: "Jug",
+reservation : {
+isReserved: false,
+reservedFrom: null,
+reservedUntil: null}
+}, {
+ID: Math.floor(Math.random() * 10000),
+name: "zapad",
+reservation : {
+isReserved: false,
+reservedFrom: null,
+reservedUntil: null}
+},{
+ID: Math.floor(Math.random() * 10000),
+name: "sjever",
+reservation : {
+isReserved: false,
+reservedFrom: null,
+reservedUntil: null}
+},{
+ID: Math.floor(Math.random() * 10000),
+name: "istok",
+reservation : {
+isReserved: false,
+reservedFrom: null,
+reservedUntil: null}
+},{
+ID: Math.floor(Math.random() * 10000),
+name: "jugo",
+reservation : {
+isReserved: false,
+reservedFrom: null,
+reservedUntil: null}
+}];
+
+function add (name) {
+	halls.push({
+		ID: Math.floor(Math.random() * 10000),
+		name: name,
+		reservation : {
+			isReserved: false,
+			reservedFrom: null,
+			reservedUntill: null}
+		}
+	)
+}
+
+
+function remove (id) {
+halls = halls.filter(hall => hall.ID !== id);
+}
+
+function reservation (ID, reservedFrom, reservedUntil) {
+halls = halls.map (
+	hall => {
+		if (hall.ID === ID) {
+			hall.reservation.isReserved = true;
+			hall.reservation.reservedFrom = reservedFrom;
+			hall.reservation.reservedUntil = reservedUntil;
+		}
+		return hall;
+		}
+	);
+}
+
+
+function checkReservation (ID) {
+	halls = halls.map (
+		hall => {
+			var timestamp = new Date();
+			//console.log(hall.ID === ID && hall.reservation.reservedUntil < timestamp);
+			if (hall.ID === ID && hall.reservation.reservedUntil < timestamp){
+				hall.reservation.isReserved = false;
+				hall.reservation.reservedFrom = null;
+				hall.reservation.reservedUntil = null;
+			}
+			return hall;
+		}
+	);
+}
+
+
+</script>
+
+
+
+</body>
+</html>
