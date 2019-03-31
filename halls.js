@@ -40,3 +40,18 @@ reservedUntil: null}
 module.exports = {
     halls: halls
 };
+
+/*
+var imena = halls.map ((element) => {
+    return element.name;
+  });
+  console.log(imena);
+  
+  console.log(imena.join());
+  http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(imena.join());
+  }).listen(8080);
+  
+  console.log('Server running at http://localhost:8080');
+    */
