@@ -1,6 +1,6 @@
 var luxon = require('luxon');
 
-var halls = [{
+/*var halls = [{
 ID: Math.floor(Math.random() * 10000),
 name: "Jug",
 reservation : {
@@ -35,7 +35,49 @@ reservation : {
 isReserved: false,
 reservedFrom: null,
 reservedUntil: null}
-}];
+}];*/
+var halls = [];
+halls.createHall = function(ID, name) {
+  var proba ={
+    ID: ID,
+    name: name,
+    reservation : {
+      isReserved: false,
+      reservedFrom: null,
+      reservedUntil: null
+    },
+    rezerviraj: function (a,b) {
+      this.reservation.isReserved= true;
+      this.reservation.reservedFrom= a;
+      this.reservation.reservedUntil= b;
+    },
+    ukloni: function () {
+      this.reservation.isReserved= false;
+      this.reservation.reservedFrom= null;
+      this.reservation.reservedUntil= null;
+    },
+  };
+  this.push(proba);
+  // return proba;
+}
+var imena = [
+  "Velika sportska dvorana", 
+  "Dvorana Hrvatskog doma", 
+  "Dvorana Gradske knjižnice", 
+  "Dvorana TIC (Turistički dom)", 
+  "Konferencijske dvorane RCTP (Razvojni centar i tehnološki park)",
+  "Ferežani"
+]
+  
+
+for (var i = 0; i < imena.length;i++){
+  halls.createHall (i + 1, imena[i]);
+}
+
+//halls[0].rezerviraj (new Date (2019, 03, 25), new Date (2019, 04, 01));
+  //console.log(halls[0].reservation);
+
+  //halls[2].rezerviraj (new Date (2019, 04, 25), new Date (2019, 05, 01));
 
 module.exports = {
     halls: halls
