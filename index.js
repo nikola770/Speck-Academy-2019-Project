@@ -53,5 +53,5 @@ app.post('/hallsDelete', function (req, res) {
 
 app.use(express.static('./public'));
 
-app.listen(3000);
+app.listen(3010);
 console.log('localhost:3000');
