@@ -8,7 +8,7 @@ app.use(bodyparser.urlencoded({
 }));
 
 app.get('/', function(req, res){
-    res.send('hello world');
+    res.send('/index');
   });
 
 app.get('/halls', function (req, res) {
