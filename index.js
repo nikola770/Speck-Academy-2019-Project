@@ -8,7 +8,7 @@ app.use(bodyparser.urlencoded({
 }));
 
 app.get('/', function(req, res){
-    res.redirect('/index');
+    res.redirect('/index.html');
   });
 
 app.get('/halls', function (req, res) {
@@ -54,4 +54,4 @@ app.post('/hallsDelete', function (req, res) {
 app.use(express.static('./public'));
 
 app.listen(3010);
-console.log('localhost:3000');
+console.log('localhost:3010');
